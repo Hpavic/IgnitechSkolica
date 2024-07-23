@@ -1,28 +1,24 @@
-<div>
-  <h2>Teachers</h2>
-  <ul>
-    <li *ngFor="let teacher of teachers" (click)="selectTeacher(teacher)">
-      {{ teacher.firstName }} {{ teacher.lastName }}
-    </li>
-  </ul>
-</div>
+<div class="teacher-container">
+  <div>
+    <h2>Odaberi Profesora</h2>
+    <div class="teacher-row" *ngFor="let teacher of teachers" (click)="selectTeacher(teacher)">
+      {{ teacher.id }} - {{ teacher.firstName }} {{ teacher.lastName }} - {{ teacher.teacherCode }}
+    </div>
+  </div>
 
-<div *ngIf="selectedTeacher">
-  <h3>Students of {{ selectedTeacher?.firstName }} {{ selectedTeacher?.lastName }}</h3>
-  <ul>
-    <li *ngFor="let student of students">
-      {{ student.firstName }} {{ student.lastName }}
-    </li>
-  </ul>
+  <div *ngIf="selectedTeacher">
+    <h3>Studenti kojima predaje {{ selectedTeacher.firstName }} {{ selectedTeacher.lastName }}</h3>
+    <div *ngFor="let student of students" class="student-row">
+      <i class="fas fa-user"></i> {{ student.id }} - {{ student.firstName }} {{ student.lastName }} - {{ student.studentCode }}
+    </div>
 
-  <h3>Subjects taught by {{ selectedTeacher?.firstName }} {{ selectedTeacher?.lastName }}</h3>
-  <ul>
-    <li *ngFor="let subject of subjects">
-      {{ subject.name }}
-    </li>
-  </ul>
-</div>
+    <h3>Predmeti koje drži {{ selectedTeacher.firstName }} {{ selectedTeacher.lastName }}</h3>
+    <div *ngFor="let subject of subjects" class="subject-row">
+      <i class="fas fa-book"></i> {{ subject.name }}
+    </div>
+  </div>
 
-<div *ngIf="errorMessage">
-  <p>{{ errorMessage }}</p>
+  <div *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </div>
 </div>

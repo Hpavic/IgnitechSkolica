@@ -1,1 +1,8 @@
+<div class="navigation-container">
+  <button (click)="navigateToHome()" [ngClass]="{'active': isActive('')}" type="button" title="home"><i class="fas fa-home"></i></button>
+  <button (click)="navigateToTeachers()" [ngClass]="{'active': isActive('teachers')}" type="button">Zadatak 1 & 2</button>
+  <button (click)="navigateToStudents()" [ngClass]="{'active': isActive('students')}" type="button">Zadatak 3</button>
+  <button (click)="navigateToSubjects()" [ngClass]="{'active': isActive('subjects')}" type="button">Zadatak 4</button>
+  <button (click)="navigateToGrades()" [ngClass]="{'active': isActive('grades')}" type="button">Zadatak 5 & 6</button>
+</div>
 <router-outlet></router-outlet>

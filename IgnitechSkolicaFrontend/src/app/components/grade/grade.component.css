@@ -1,0 +1,33 @@
+.grade-container {
+    max-width: 800px;
+    text-align: center;
+    padding: 8px;
+    margin: 0 auto;
+}
+
+.select-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.student-row, .subject-row {
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.student-row.active, .subject-row.active {
+    background-color: #f0f0f0;
+}
+
+.student-row:hover, .subject-row:hover {
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 400px) {
+    .select-container {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+}

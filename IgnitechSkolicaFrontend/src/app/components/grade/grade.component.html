@@ -1,0 +1,40 @@
+<div class="grade-container">
+  <div class="select-container">
+    <div>
+      <h2>Odaberi Studenta</h2>
+      <div 
+        class="student-row" 
+        *ngFor="let student of students" 
+        (click)="selectStudent(student)"
+        [ngClass]="{'active': selectedStudent?.id === student.id}">
+        {{ student.id }} - {{ student.firstName }} {{ student.lastName }} - {{ student.studentCode }}
+      </div>
+    </div>
+
+    <div *ngIf="selectedStudent">
+      <h2>Odaberi predmet koji sluša {{ selectedStudent.firstName }} {{ selectedStudent.lastName }}</h2>
+      <div 
+        *ngFor="let subject of subjects" 
+        class="subject-row"
+        (click)="selectSubject(subject)"
+        [ngClass]="{'active': selectedSubject?.id === subject.id}">
+        <i class="fas fa-book"></i> {{ subject.name }}
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="selectedSubject">
+    <h3>Ocjene za {{ selectedStudent?.firstName }} {{ selectedStudent?.lastName }} u predmetu {{ selectedSubject.name }}</h3>
+    <div class="grade-row" *ngFor="let grade of grades">
+      {{ grade.id }} - {{ grade.value }}% - {{ grade.gradeText }} ({{ grade.gradeNumber }}) - {{ grade.createdOn | date }}
+    </div>
+  </div>
+
+  <div *ngIf="averageGrade">
+    <h3>Prosječna ocjena: {{ averageGrade.averageValue }}% - {{ averageGrade.gradeText }} ({{ averageGrade.gradeNumber }})</h3>
+  </div>
+
+  <div *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </div>
+</div>

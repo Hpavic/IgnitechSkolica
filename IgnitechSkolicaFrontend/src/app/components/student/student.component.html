@@ -1,0 +1,19 @@
+<div class="student-container">
+  <div>
+    <h2>Odaberi Studenta</h2>
+    <div class="student-row" *ngFor="let student of students" (click)="selectStudent(student)">
+      {{ student.id }} - {{ student.firstName }} {{ student.lastName }} - {{ student.studentCode }}
+    </div>
+  </div>
+
+  <div *ngIf="selectedStudent">
+    <h3>Predmeti koje sluša {{ selectedStudent.firstName }} {{ selectedStudent.lastName }}</h3>
+    <div *ngFor="let subject of subjects" class="subject-row">
+      <i class="fas fa-book"></i> {{ subject.name }}
+    </div>
+  </div>
+
+  <div *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </div>
+</div>

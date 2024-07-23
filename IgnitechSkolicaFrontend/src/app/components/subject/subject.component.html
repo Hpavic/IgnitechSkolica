@@ -1,0 +1,36 @@
+<div class="subject-container">
+  <div class="select-container">
+    <div>
+      <h2>Odaberi Studenta</h2>
+      <div 
+        class="student-row" 
+        *ngFor="let student of students" 
+        (click)="selectStudent(student)"
+        [ngClass]="{'active': selectedStudent?.id === student.id}">
+        {{ student.id }} - {{ student.firstName }} {{ student.lastName }} - {{ student.studentCode }}
+      </div>
+    </div>
+
+    <div *ngIf="selectedStudent">
+      <h2>Odaberi predmet koji sluša {{ selectedStudent.firstName }} {{ selectedStudent.lastName }}</h2>
+      <div 
+        *ngFor="let subject of subjects" 
+        class="subject-row"
+        (click)="selectSubject(subject)"
+        [ngClass]="{'active': selectedSubject?.id === subject.id}">
+        <i class="fas fa-book"></i> {{ subject.name }}
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="teacher">
+    <h3>Profesor koji predaje studentu {{ selectedStudent?.firstName }} {{ selectedStudent?.lastName }} na predmetu {{ selectedSubject?.name }}</h3>
+    <div>
+      <i class="fas fa-user"></i> {{ teacher.id }} - {{ teacher.firstName }} {{ teacher.lastName }} - {{ teacher.teacherCode }}
+    </div>
+  </div>
+
+  <div *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </div>
+</div>
