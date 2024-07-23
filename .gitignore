@@ -48,3 +48,13 @@ bld/
 .vs/IgnitechSkolica/DesignTimeBuild/
 .vs/IgnitechSkolica/FileContentIndex/
 .vs/IgnitechSkolica/v17/
+
+# Angular specific files
+node_modules/
+dist/
+.DS_Store
+
+# Ignore the database file
+*.db
+*.db-shm
+*.db-wal
