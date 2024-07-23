@@ -18,7 +18,7 @@ To get a local copy up and running, follow these steps:
 1. **Clone the repository:**
 
     ```sh
-    git clone <repository-url>
+    git clone <[repository-url](https://github.com/Hpavic/IgnitechSkolica.git)>
     ```
 
 2. **Navigate to the frontend directory:**
