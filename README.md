@@ -1,4 +1,4 @@
-# IgnitechSkolicaFrontend
+# Ignitech Školica
 
 ## Project Overview
 
