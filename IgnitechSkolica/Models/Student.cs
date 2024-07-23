@@ -10,4 +10,12 @@
         public string? StudentCode { get; set; }
         public List<Subject> Subjects { get; set; } = new List<Subject>();
     }
+
+    public class StudentDisplay
+    {
+        public int Id { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
+        public string? StudentCode { get; set; }
+    }
 }
