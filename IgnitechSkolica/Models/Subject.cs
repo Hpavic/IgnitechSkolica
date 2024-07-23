@@ -10,4 +10,10 @@
         public Teacher? Teacher { get; set; }
         public List<Grade> Grades { get; set; } = new List<Grade>();
     }
+
+    public class SubjectDisplay
+    {
+        public int Id { get; set; }
+        public string? Name { get; set; }
+    }
 }
