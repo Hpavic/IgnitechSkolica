@@ -14,6 +14,14 @@ namespace IgnitechSkolica.Data
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Grade> Grades { get; set; }
 
+        /*(AI) 
+        Create seed data for my ASP.NET Core project. The seed data should include:
+        2 entries for Teacher with properties: Id, FirstName, LastName, TeacherCode
+        2 entries for Student with properties: Id, FirstName, LastName, TeacherId, StudentCode
+        2 entries for Subject with properties: Id, Name, StudentId, TeacherId
+        2 entries for Grade with properties: Id, Value, SubjectId, CreatedOn
+        Each entry should have unique values and maintain relationships between the models. */
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Teacher>().HasData(
