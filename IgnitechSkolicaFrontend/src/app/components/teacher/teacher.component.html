@@ -1,0 +1,28 @@
+<div>
+  <h2>Teachers</h2>
+  <ul>
+    <li *ngFor="let teacher of teachers" (click)="selectTeacher(teacher)">
+      {{ teacher.firstName }} {{ teacher.lastName }}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedTeacher">
+  <h3>Students of {{ selectedTeacher?.firstName }} {{ selectedTeacher?.lastName }}</h3>
+  <ul>
+    <li *ngFor="let student of students">
+      {{ student.firstName }} {{ student.lastName }}
+    </li>
+  </ul>
+
+  <h3>Subjects taught by {{ selectedTeacher?.firstName }} {{ selectedTeacher?.lastName }}</h3>
+  <ul>
+    <li *ngFor="let subject of subjects">
+      {{ subject.name }}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="errorMessage">
+  <p>{{ errorMessage }}</p>
+</div>
